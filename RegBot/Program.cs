@@ -1,6 +1,6 @@
 using Telegram.Bot;
 var Bot = new TelegramBotClient("1777796695:AAFLtiI755qHv_cNtIdkpWOks09Hl2tp1VQ");
-Bot.SetWebhookAsync("https://7e64-195-158-8-30.ngrok.io/api/bot");
+Bot.SetWebhookAsync("https://dk-reg.herokuapp.com/api/bot");
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
