@@ -24,7 +24,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors(opt =>
-    opt.AllowAnyOrigin().AllowAnyMethod());
+    opt.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseHttpsRedirection();
 
