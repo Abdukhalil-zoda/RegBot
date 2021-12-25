@@ -1,3 +1,4 @@
+using RegBot;
 using Telegram.Bot;
 var Bot = new TelegramBotClient("1777796695:AAFLtiI755qHv_cNtIdkpWOks09Hl2tp1VQ");
 //Bot.SetWebhookAsync("https://dk-reg.herokuapp.com/api/bot");
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddSingleton<TelegramBotClient>(Bot);
+builder.Services.AddSingleton<Data>();
 builder.Services.AddCors();
 
 
