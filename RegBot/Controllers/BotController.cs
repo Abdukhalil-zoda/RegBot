@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Drawing;
+﻿using Microsoft.AspNetCore.Mvc;
 using Telegram.Bot;
-using Telegram.Bot.Types;
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace RegBot.Controllers
 {
@@ -65,7 +63,7 @@ return Ok();
             byte[] bytes;
             using (var stream = new MemoryStream())
             {
-                cap.Item1.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                cap.Item1.Save(stream,  ImageFormat.Png);
                 bytes = stream.ToArray();
             }
 
@@ -76,7 +74,7 @@ return Ok();
             return Ok(new{ bytes, ContentType = "image/png", id = id.ToString()});
         }
 
-        private Tuple<Bitmap, string> CreateCap(int Width, int Height)
+        private Tuple< Bitmap, string> CreateCap(int Width, int Height)
         {
             Random rnd = new Random();
 

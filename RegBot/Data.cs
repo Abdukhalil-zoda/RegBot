@@ -1,6 +1,6 @@
 ﻿namespace RegBot
 {
-    
+
     public class Data
     {
         public class Dict
