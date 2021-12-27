@@ -2,6 +2,7 @@
 using Telegram.Bot;
 using System.Drawing.Imaging;
 using System.Drawing;
+using RegBot.Services;
 
 namespace RegBot.Controllers
 {
@@ -52,7 +53,7 @@ return Ok();
         [HttpGet("cap")]
         public async Task<IActionResult> CreateCaptcha()
         {
-            var cap = CreateCap(200, 50);
+            var cap = BotService.GetTuple1();
             var id = Guid.NewGuid();
             D.Add(new Data.Dict
             {
@@ -60,21 +61,15 @@ return Ok();
                 text = cap.Item2,
                 created = DateTime.Now
             });
-            byte[] bytes;
-            using (var stream = new MemoryStream())
-            {
-                cap.Item1.Save(stream,  ImageFormat.Png);
-                bytes = stream.ToArray();
-            }
 
             MultipartFormDataContent content = new MultipartFormDataContent();
                 FormFileCollection files = new FormFileCollection();
             
 
-            return Ok(new{ bytes, ContentType = "image/png", id = id.ToString()});
+            return Ok(new{ cap.Item1, ContentType = "image/png", id = id.ToString()});
         }
 
-        private Tuple< Bitmap, string> CreateCap(int Width, int Height)
+        private Tuple<Bitmap, string> CreateCap(int Width, int Height)
         {
             Random rnd = new Random();
 
