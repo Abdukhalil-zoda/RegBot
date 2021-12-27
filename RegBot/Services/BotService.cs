@@ -55,8 +55,8 @@ namespace RegBot.Services
             FontFamily family = collection.Install("font.ttf");
             Font font = family.CreateFont(24, FontStyle.Italic);
             Random random = new Random();
-            int Xpos = random.Next(0, 200 - 50);
-            int Ypos = random.Next(15, 50 - 15);
+            int Xpos = random.Next(0, 200 - 60);
+            int Ypos = random.Next(15, 50 - 20);
             var text = String.Empty;
             string ALF = "1234567890QWERTYUIOPASDFGHJKLZXCVBNM";
             for (int i = 0; i < 5; ++i)

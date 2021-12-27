@@ -28,11 +28,14 @@
 
         void Clear()
         {
-            foreach (var item in data)
+            int length = data.Count;
+
+            for (int i = 0; i < length; i++)
             {
-                if (DateTime.Now - item.created > TimeSpan.FromMinutes(10))
+                if (DateTime.Now - data[i].created > TimeSpan.FromMinutes(10))
                 {
-                    data.Remove(item);
+                    length--;
+                    data.Remove(data[i]);
                 }
             }
         }

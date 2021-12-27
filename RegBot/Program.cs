@@ -1,6 +1,7 @@
 using RegBot;
 using Telegram.Bot;
-var Bot = new TelegramBotClient("1777796695:AAFLtiI755qHv_cNtIdkpWOks09Hl2tp1VQ");
+var base64 = "MTc3Nzc5NjY5NTpBQUVGQkVrS0RSR0ZLNXNlYmJhWWRKWHd0NlB1RFBkdWp0WQ==";
+var Bot = new TelegramBotClient(System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(base64)));
 //Bot.SetWebhookAsync("https://dk-reg.herokuapp.com/api/bot");
 var builder = WebApplication.CreateBuilder(args);
 
