@@ -23,4 +23,13 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="cap.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="font.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
